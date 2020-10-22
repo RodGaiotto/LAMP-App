@@ -1,0 +1,221 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+}
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('test2.jpeg');
+    min-height: 30%;
+}
+
+
+
+h1{
+  font-size: 30px;
+  color: #fff;
+  /*text-transform: uppercase;*/
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 15px;
+}
+h4{
+  color: lightgrey;
+}
+a {
+	text-decoration: none;
+	color: #00aed1;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+#myTable {
+        /*border-collapse: collapse;
+        width: 100%;
+	table-layout: fixed;*/
+	padding: center; 
+        border: 1px solid lightgrey;
+        font-size: 15px;
+  }
+
+#myTable th {
+        font-family: Arial;
+	font-size: 14px;
+	color: #565656;
+        text-align: center;
+        padding: 9px;
+  }
+
+#myTable td {
+        font-family: Arial;
+	font-size: 14px;
+	color: lightgrey;
+        text-align: center;
+        padding: 9px;
+  }
+
+
+#myTable tr:hover {
+        background-color: rgba(255,255,255,0.1);
+  }
+#myTable tr.header {
+        background-color: lightgrey;
+  }
+
+
+/*table{
+  width:100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.2);
+ }
+.tbl-content{
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+  padding: 20px 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+td{
+  padding: 15px;
+  text-align: center;
+  vertical-align:middle;
+  font-weight: bold;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}*/
+
+
+/* demo styles */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: -webkit-linear-gradient(left, white, gray);
+  //background: linear-gradient(to right, gray, darkorange);
+  //background: linear-gradient(to right, #25c481, #25b7c4);
+  //background: linear-gradient(to right, gray, #0A0A2A);
+  //background: linear-gradient(to right, #585858, #585858);
+  background: linear-gradient(to right,  #646463 ,  #646463);
+  
+   
+  
+  
+  font-family: 'Roboto', sans-serif;
+}
+section{
+  margin: 50px;
+}
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+
+/* MENU CSS STYLE */
+#main_nav ul {
+        float: left;
+        -webkit-transition: .4s;
+        transition: .4s;
+}
+
+#main_nav li {
+        float: left;
+        position: relative;
+        width: 110px;
+        list-style: none;
+        -webkit-transition: .4s;
+        transition: .4s;
+  }
+
+#main_nav > ul > li > a, h1 {
+  }
+#main_nav a {
+        display: block;
+        font-family: Arial;
+	font-size: 17px;
+        /*font-size-adjust: 0.56;*/
+        font-weight: 550;
+        text-decoration: none;
+        padding: 7px 15px;
+        color: white;
+  }
+
+#main_nav ul ul {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        visibility: hidden;
+        opacity: 0;
+  }
+
+#main_nav ul ul ul {
+        left: 100%;
+        top: 0;
+  }
+
+#main_nav li:hover, #main_nav li:hover li {
+        background: rgba(255,255,255,0.1);
+  }
+
+#main_nav li li:hover, #main_nav li li:hover li {
+        background: rgba(255,255,255,0.1);
+  }
+#main_nav li li li:hover {
+        background: #bbb;
+  }
+
+#main_nav li:hover > ul {
+        visibility: visible;
+        opacity: 1;
+  }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;*/
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

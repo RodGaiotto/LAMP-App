@@ -1,0 +1,175 @@
+<?php
+//HERE LAYS THE CONNECTOR BETWEEN THE PAGE AND THE DATABASE
+include("connector1.php"); 
+
+$today = date('Y-m-d');
+$project = ""; 
+$consulta = "";
+
+
+
+//if(isset) check if variable is set and if is not null (if inicialized)	
+//RDATE = '%s', MEANS THAT THE OUTPUT WILL BE READ AS "STRING"
+//$_GET, capture what is passed by certain variable
+//$consulta can be SELECT * FROM SRSLOAD WHERE RDATE = 2017-06-27 AND SUB_ACCOUNT CANADA
+//or $consulta can be SELECT * FROM SRSLOAD WHERE RDATE = 2017-06-27
+//that's what is expected to have in the $consulta variable.
+if(isset($_GET['project'])) {
+	$project = $_GET['project'];
+//	$consulta = sprintf("SELECT * FROM SRSLOAD WHERE RDATE = '%s' AND SUB_ACCOUNT = '%s'", $today, $location);
+	$consulta = sprintf("SELECT * FROM PERFTRIG WHERE ACCOUNTL = '%s' ORDER BY DATETIME DESC", $project);
+} else {
+	//$consulta = sprintf("SELECT * FROM SRSLOAD WHERE RDATE = '%s'", $today);
+        //$consulta = sprintf("SELECT * FROM SRSLOAD ORDER BY RDATE DESC");
+	// ( CURDATE() - INTERVAL 1 DAY) WILL SHOW CURRENT DAY + THE LAST DAY BASED IN THE RDATE
+	//$consulta = sprintf("SELECT * FROM PERFTRIG WHERE DATETIME >= ( CURDATE() - INTERVAL 0 DAY) ORDER BY DATETIME DESC");
+$consulta = "SELECT * FROM PERFTRIG WHERE DATETIME >= ( CURDATE() - INTERVAL 0 DAY) ORDER BY DATETIME DESC";
+	}
+
+
+$conn = $mysqli -> query($consulta) or die($mysqli -> error);
+
+//$con variable will be used to fill up the HTML table bellow using while
+//$mysqli -> query($consulta) is a SELECT QUERY in que DataBase
+//$con = $mysqli -> query($consulta) or die($mysqli -> error);
+
+//THESE VARIABLE WILL BE CALLED IN THE TABLE
+$SYSNAME = "SYSNAME";
+$ACCOUNTL = "ACCOUNTL";             
+$DATETIME = "DATETIME";
+$CECTYPE = "CECTYPE";                                                         
+$CECNAME = "CECNAME";                                                         
+$CAPMODEL = "CAPMODEL";
+$REALMODEL = "REALMODEL";
+$PROCPEAK = "PROCPEAK";
+$PROCUTILI = "PROCUTILI";
+$PROCPEAKTIME = "PROCPEAKTIME";
+$CPRATIO = "CPRATIO";
+$PROCAVAIL = "PROCAVAIL";
+$MEMPEAK = "MEMPEAK";
+$MEMUTILI = "MEMUTILI";
+$MEMPEAKTIME = "MEMPEAKTIME";
+$MEMRATIO = "MEMRATIO";
+$MEMAVAIL = "MEMAVAIL";
+
+?>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Performance Trigger v0.1</title>
+  
+  <link rel="stylesheet" href="css/reset.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">  
+
+</head>
+
+<body>
+
+<!--START MENU CODING -->
+<br>
+<center>
+<nav id="main_nav">
+<ul>
+<li>
+<a href="index.php">home</a>
+</li>
+<li>
+<a href="">projects</a>
+<ul>
+<li>
+<a href="">IGA</a>
+<ul>
+<li><a href="index.php?project=LEGACY">Legacy</a></li>
+<li><a href="index.php?project=ECM">ECM</a></li>           
+</ul>
+</li>
+<li>
+<!--<a href="">AMEX</a>-->
+</li>
+</ul>
+</li>
+<li>
+<!--<a href="#search.php">search</a>-->
+</li>
+<li>
+<a href="#help.php">about</a>
+</li>
+</ul>
+</nav>
+</center>
+<br>
+<!--END MENU CODING -->
+
+  <section>
+  <!--for demo wrap-->
+  <h1>PerformanceTrigger v0.1</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>System</th>
+          <th>project</th>
+	  <th>CP AVERAGE</th>
+          <th>CP PEAK</th>
+          <th>PEAK DURATION</th>
+          <th>CP RATIO</th>
+	<th>CP AVAILABLE</th>
+	<th>MEM AVERAGE</th>
+	<th>MEM PEAK</th>
+	<th>PEAK DURATION</th>
+	<th>MEM RATIO</th>
+	<th>MEM AVAILABLE</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      	<?php while($dado = $conn->fetch_array()): ?>
+	 <tr>
+
+        <?php
+                if ($dado[$PROCAVAIL]<=5 or $dado[$MEMAVAIL]<=10 )
+                echo '<td style="color:#da2e2e">';
+                echo $dado[$SYSNAME];
+        ?>
+
+	<td><?php echo $dado[$ACCOUNTL]; ?></td>
+        <td><?php echo $dado[$PROCUTILI]; ?>%</td>  
+	<td><?php echo $dado[$PROCPEAK]; ?>%</td>
+	<td><?php echo $dado[$PROCPEAKTIME]; ?> min</td>
+	<td><?php echo $dado[$CPRATIO]; ?></td>
+	
+	<?php
+                if ($dado[$PROCAVAIL]<=5 )
+                echo '<td style="color:#da2e2e">';
+                echo $dado[$PROCAVAIL];
+        ?>
+
+
+
+	<td><?php echo $dado[$MEMUTILI]; ?>%</td>
+	<td><?php echo $dado[$MEMPEAK]; ?>%</td>
+	<td><?php echo $dado[$MEMPEAKTIME]; ?> min</td>
+	<td><?php echo $dado[$MEMRATIO]; ?></td>
+	<td><?php echo $dado[$MEMAVAIL]; ?> GBs</td>
+	
+        </tr>
+	<?php endwhile; ?>
+      </tbody>
+    </table>
+  </div>
+</section>
+</tr>
+</table>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

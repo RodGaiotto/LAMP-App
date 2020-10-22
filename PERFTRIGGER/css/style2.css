@@ -1,0 +1,202 @@
+/* HERE BEGINS THE FOR THE MENU */
+
+* {
+	margin: 0;
+	padding: 0;
+  }
+
+p {
+	margin: 15px 0;
+  }
+
+a {
+	font: arial;
+	color: #06c;
+  }
+
+#main_nav ul {
+	background: lightgrey;
+	float: left;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+#main_nav li {
+	float: left;
+	position: relative;
+	width: 150px;
+	list-style: none;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+
+#main_nav > ul > li > a, h1 {
+  }
+
+#main_nav a {
+	display: block;
+	font-family: Arial;
+	font-size-adjust: 0.56;
+	font-weight: 500;
+	text-decoration: none;
+	padding: 7px 15px;
+	color: #6E6E6E;
+  }
+
+#main_nav ul ul {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	visibility: hidden;
+	opacity: 0;
+  }
+
+#main_nav ul ul ul {
+	left: 100%;
+	top: 0;
+  }
+
+#main_nav li:hover, #main_nav li:hover li {
+	background: #ddd;
+  }
+
+#main_nav li li:hover, #main_nav li li:hover li {
+	background: #bbb;
+  }
+
+#main_nav li li li:hover {
+	background: #999;
+  }
+
+#main_nav li:hover > ul {
+	visibility: visible;
+	opacity: 1;
+  }
+
+/* HERE ENDS THE FOR THE MENU */
+
+/* HERE BEGINS THE CSS FOR THE TABLE */
+
+#myTable {
+	border-collapse: collapse;
+	width: 40%;
+	border: 1px solid lightgrey;
+	font-size: 15px;
+  }
+
+#myTable th, #myTable td {
+	font-family: Arial;
+	text-align: center;
+	padding: 10px;
+  }
+
+#myTable tr {
+	border-bottom: 1px solid lightgrey;
+  }
+
+#myTable tr.header, #myTable tr:hover {
+	background-color: lightgrey;
+  }
+
+/* HERE ENDS THE CSS FOR THE TABLE */
+
+/* HERE BEGINS THE SEARCH TOOL STYLE */
+
+input[type=text] {
+	width: 200px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: white;
+	background-image: url('../img/searchicon.png');
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+	margin-top: 50px; 
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+  }
+
+input[type=text]:focus {
+	width: 25%;
+  }
+
+/* HERE ENDS THE SEARCH TOOL STYLE */
+
+/* HERE BEGINS THE POPUP STYLE */
+
+.box {
+	width: 40%;
+	margin: 0 auto;
+	background: rgba(255,255,255,0.2);
+	padding: 35px;
+	border: 2px solid #fff;
+	border-radius: 20px/50px;
+	  background-clip: padding-box;
+	text-align: center;
+  }
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+ 	 opacity: 0;
+  }
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+ }
+
+.popup {
+	margin: 70px auto;
+	padding: 20px;
+ 	background: #fff;
+	border-radius: 5px;
+	width: 45%;
+	position: relative;
+	transition: all 5s ease-in-out;
+  }
+
+.popup h2 {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+	position: absolute;
+	top: 20px;
+ 	 right: 30px;
+ 	 transition: all 200ms;
+ 	 font-size: 30px;
+	  font-weight: bold;
+	text-decoration: none;
+	color: #333;
+  }
+
+.popup .close:hover {
+	color: #06D85F;
+  }
+.popup .content {
+	max-height: 30%;
+	overflow: auto;
+  }
+
+@media screen and (max-width: 700px){
+	.box{
+		width: 70%;
+  	}
+
+	.popup{
+		width: 70%;
+  	}
+}
+
+/* HERE ENDS THE POPUP STYLE */

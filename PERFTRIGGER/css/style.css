@@ -1,0 +1,196 @@
+/* HERE BEGINS THE FOR THE MENU */
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: arial;
+  }
+
+p {
+	margin: 15px 0;
+  }
+
+a {
+	font-family: arial;
+	color: #06c;
+  }
+body {
+        font-family: arial;
+  }
+label {
+        font-family: arial;
+  }
+
+#main_nav ul {
+	background: lightgrey;
+	float: left;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+#main_nav li {
+	float: left;
+	position: relative;
+	width: 130px;
+	list-style: none;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+
+#main_nav > ul > li > a, h1 {
+  }
+
+#main_nav a {
+	display: block;
+	font-family: Arial;
+	font-size-adjust: 0.56;
+	font-weight: 500;
+	text-decoration: none;
+	padding: 7px 15px;
+	color: #6E6E6E;
+  }
+
+#main_nav ul ul {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	visibility: hidden;
+	opacity: 0;
+  }
+
+#main_nav ul ul ul {
+	left: 100%;
+	top: 0;
+  }
+
+#main_nav li:hover, #main_nav li:hover li {
+	background: #ddd;
+  }
+
+#main_nav li li:hover, #main_nav li li:hover li {
+	background: #bbb;
+  }
+
+#main_nav li li li:hover {
+	background: #999;
+  }
+
+#main_nav li:hover > ul {
+	visibility: visible;
+	opacity: 1;
+  }
+
+/* HERE BEGINS THE CSS FOR THE TABLE */
+
+table {
+        border-collapse: collapse;
+        width: 90%;
+        border: 1px solid lightgrey;
+        font-size: 13px;
+	margin-left:auto; 
+    	margin-right:auto;
+  }
+
+th {
+        font-family: Arial;
+        text-align: center;
+        padding: 10px;
+	font-weight: bold;
+  }
+
+td {
+        font-family: Arial;
+        text-align: center;
+        padding: 10px;
+  }
+
+tr {
+        border-bottom: 1px solid lightgrey;
+  }
+
+tr.header, tr:hover {
+        background-color: lightgrey;
+  }
+  
+/* HERE BEGINS THE CSS FOR THE TABLE SSI*/
+
+#ssitable {
+        border-collapse: collapse;
+        width: 70%;
+        border: 1px solid lightgrey;
+        font-size: 13px;
+	margin-left:auto; 
+    	margin-right:auto;
+  }
+  
+ #sectable {
+        border-collapse: collapse;
+        width: 85%;
+        border: 1px solid lightgrey;
+        font-size: 13px;
+	margin-left:auto; 
+    	margin-right:auto;
+} 
+
+/* HERE LAYS THE INPUT CSS */
+input[type=text], select {
+    /*width: 13%;*/
+    padding: 6px 6px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 10%;
+    background-color: #DF7401;
+    color: white;
+    padding: 14px 20px;
+    margin: 0px 9px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #FE9A2E;
+}
+
+div {
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    padding: 5px;
+}
+
+/*BUTTON STYLE*/
+.mybutton {
+    background-color: #04B45F;
+    border: none;
+    color: white;
+    padding: 9px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.mybutton:hover {
+    background-color: #81F781;
+}
+
+/*H6 STYLE*/
+h6 {
+margin-right:9px;
+margin: 8px
+text-transform: capitalize;
+}
+
+h4 {
+margin-right:9px;
+margin: 8px
+text-transform: capitalize;
+}

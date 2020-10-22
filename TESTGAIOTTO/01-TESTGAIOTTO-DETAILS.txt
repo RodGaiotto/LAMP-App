@@ -1,0 +1,52 @@
+Application testgaiotto:
+
+Type: CRUD
+Language: PHP, JS, HTML
+
+DataBase: MySQL
+DB Name: test
+Tables:
+LIVETABLE - General information
+
+The application inititaly developed to run in Cloud thru a PHP boilerplate display information from a MySQL database in a table.
+
+There are 3 buttons in the table allowing check the record, to update and to delete.
+
+
+DataBase Details:
+
+mysql -u admin -p --host sl-us-south-1-portal.27.dblayer.com --port 46404 --ssl=true --local-infile
+ZWZJWJPFASNIGKLN
+
+--------------------------------------
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| test               |
++--------------------+
+
+--------------------------------------
+
+MySQL [(none)]> use test;
+
+--------------------------------------
+
+MySQL [test]> show tables;
++----------------+
+| Tables_in_test |
++----------------+
+| LIVETABLE      |
++----------------+
+
+--------------------------------------
+
+MySQL [test]> describe LIVETABLE;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| ID       | int(4)      | NO   | PRI | NULL    | auto_increment |
+| TASKNAME | varchar(50) | YES  |     | NULL    |                |
+| DETAILS  | varchar(50) | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+

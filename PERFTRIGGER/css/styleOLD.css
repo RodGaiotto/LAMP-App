@@ -1,0 +1,123 @@
+
+h1{
+  font-size: 30px;
+  color: #fff;
+  /*text-transform: uppercase;*/
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+table{
+  width:100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.2);
+ }
+.tbl-content{
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+  padding: 20px 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+td{
+  padding: 15px;
+  text-align: center;
+  vertical-align:middle;
+  font-weight: bold;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+
+/* demo styles */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  font-family: 'Roboto', sans-serif;
+}
+section{
+  margin: 50px;
+}
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+
+/* MENU CSS STYLE */
+#main_nav ul {
+        float: left;
+        -webkit-transition: .4s;
+        transition: .4s;
+}
+
+#main_nav li {
+        float: left;
+        position: relative;
+        width: 130px;
+        list-style: none;
+        -webkit-transition: .4s;
+        transition: .4s;
+  }
+
+#main_nav > ul > li > a, h1 {
+  }
+#main_nav a {
+        display: block;
+        font-family: Arial;
+	font-size: 19px;
+        /*font-size-adjust: 0.56;*/
+        font-weight: 500;
+        text-decoration: none;
+        padding: 7px 15px;
+        color: white;
+  }
+
+#main_nav ul ul {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        visibility: hidden;
+        opacity: 0;
+  }
+
+#main_nav ul ul ul {
+        left: 100%;
+        top: 0;
+  }
+
+#main_nav li:hover, #main_nav li:hover li {
+        background: rgba(255,255,255,0.1);
+  }
+
+#main_nav li li:hover, #main_nav li li:hover li {
+        background: rgba(255,255,255,0.1);
+  }
+#main_nav li li li:hover {
+        background: #bbb;
+  }
+
+#main_nav li:hover > ul {
+        visibility: visible;
+        opacity: 1;
+  }
