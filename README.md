@@ -1,0 +1,2 @@
+# LAMP Apps
+LINUX + APACHE + MYSQL + PHP
