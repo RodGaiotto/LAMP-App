@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: w3ibm.mybluemix.net
+  name: perftrigger
+  host: perftrigger
+  disk_quota: 1024M
+  services:
+  - Compose for MySQL-kv
